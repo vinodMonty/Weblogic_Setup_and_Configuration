@@ -1,5 +1,5 @@
 if __name__ == '__main__':
-    from wlssModule import *
+    from wlstModule import *
 import getopt
 import sys
 import re
@@ -51,7 +51,7 @@ def updateKeyStoreSSLConfig():
             password = configfilelist[4]
             alias = configfilelist[5]
             try:
-                domainConfig()
+                serverConfig()
                 edit()
                 startEdit()
                 cd('/Servers')
@@ -60,6 +60,8 @@ def updateKeyStoreSSLConfig():
                 for server_name in servers:
                     if server_name != 'AdminServer':
                         print("Updating KeyStore and SSL for Managed Server {}".format(server_name))
+                        edit()
+                        startEdit()
                         cd('/Servers/{}'.format(server_name))
                         set('KeyStores',keystores)
                         set('CustomIdentityKeyStoreFileName', identitykeystorepath)
@@ -72,8 +74,8 @@ def updateKeyStoreSSLConfig():
                         save()
 
                         cd('/Servers/{}/SSL/{}'.format(server_name,server_name))
-                        set('KeyAlias',alias)
-                        set('KeyPassPhrase',password)
+                        set('ServerPrivateKeyAlias',alias)
+                        set('ServerPrivateKeyPassPhrase',password)
 
                         save()
                         activate()
