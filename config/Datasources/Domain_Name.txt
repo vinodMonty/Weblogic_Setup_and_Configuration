@@ -1,0 +1,1 @@
+<DatasourceName>|<JNDI_Name>|DriverClass|DB_Name|DB_Password|Cluster_Name|JDBC_URL
