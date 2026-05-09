@@ -8,7 +8,7 @@ This Repository contains all the scripts for creating managed servers, datasourc
 ## Creating Managed Servers
 To create managed server, set the required details in the **/config/ManagedServers/Domain_Name.txt** file. Then run the following command once prerequisite steps are done.
 
-`java weblogic.WLST <path_to_createDatasource.py> -u <weblogic_user> -p <weblogic_user_password> -a t3://<Host>:<Admin_Port> -s /config/ManagedServers/Domain_Name.txt`
+`java weblogic.WLST <path_to_createManagedServers.py> -u <weblogic_user> -p <weblogic_user_password> -a t3://<Host>:<Admin_Port> -s /config/ManagedServers/Domain_Name.txt`
 
 ## Creating Datasources
 To create datasources, set the required details in the **/config/Datasources/Domain_Name.txt** file. Then run the following command once prerequisite steps are done.
